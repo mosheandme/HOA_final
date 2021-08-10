@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
-function HoaNavbar({ activeUser }) {
+function HoaNavbar({ activeUser, onLogout }) {
     return (
         <div c-navbar>
             <Navbar bg="light" expand="lg">
@@ -17,7 +17,7 @@ function HoaNavbar({ activeUser }) {
                         </Nav>
                         <Nav className="ms-auto">
                             {!activeUser ? <Nav.Link href="#login">Login</Nav.Link> : null}
-                            {activeUser ? <Nav.Link href="#">Logout</Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#" onClick={() => onLogout()}>Logout</Nav.Link> : null}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

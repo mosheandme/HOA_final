@@ -18,15 +18,15 @@ function App() {
   // const [activeUser, setactiveUser] = useState(null);
   return (
     <div >
-      <HoaNavbar activeUser={activeUser} />
+      <HoaNavbar activeUser={activeUser} onLogout={() => setactiveUser(null)} />
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage /></Route>
-          <Route exact path="/issues"><IssuesPage /></Route>
-          <Route exact path="/messages"><MessagesPage /></Route>
-          <Route exact path="/tenants"><TenantsPage /></Route>
-          <Route exact path="/voting"><VotingPage /></Route>
+          <Route exact path="/issues"><IssuesPage activeUser={activeUser} /></Route>
+          <Route exact path="/messages"><MessagesPage activeUser={activeUser} /></Route>
+          <Route exact path="/tenants"><TenantsPage activeUser={activeUser} /></Route>
+          <Route exact path="/voting"><VotingPage activeUser={activeUser} /></Route>
         </Switch>
       </HashRouter>
 
