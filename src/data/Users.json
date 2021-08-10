@@ -1,0 +1,34 @@
+[
+    {
+        "fname": "Moshe",
+        "lname": "Batito",
+        "email": "moshe@moshe.com",
+        "apartment": "1",
+        "isCommitteeMember": "true",
+        "pwd": "111"
+    },
+    {
+        "fname": "Moriya",
+        "lname": "Megidish",
+        "email": "moriya@moriya.com",
+        "apartment": "2",
+        "isCommitteeMember": "false",
+        "pwd": "222"
+    },
+    {
+        "fname": "Noam",
+        "lname": "Omesi",
+        "email": "noam@noam.com",
+        "apartment": "3",
+        "isCommitteeMember": "false",
+        "pwd": "333"
+    },
+    {
+        "fname": "Eldar",
+        "lname": "Itzhak",
+        "email": "eldar@eldar.com",
+        "apartment": "4",
+        "isCommitteeMember": "false",
+        "pwd": "444"
+    }
+]

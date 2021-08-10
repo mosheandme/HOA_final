@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './LoginPage.css';
 
-function LoginPage(props) {
+function LoginPage({users}) {
     const[email, setEmail] = useState("");
     const[pwd, setPwd] = useState("");
     
