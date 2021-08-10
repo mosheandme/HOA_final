@@ -8,13 +8,17 @@ import MessagesPage from './Pages/MessagesPage/MessagesPage';
 import TenantsPage from './Pages/TenantsPage/TenantsPage';
 import VotingPage from './Pages/VotingPage/VotingPage';
 import HoaNavbar from './components/HoaNavbar/HoaNavbar';
+import { useState } from 'react';
+import UserModel from './model/UserModel';
 
 
 
 function App() {
+  const [activeUser, setactiveUser] = useState(new UserModel({ fname: "Moshe", lname: "Batito", email: "moshe@moshe.com", apartment: "2", isCommitteeMember: "true", pwd: "123" }));
+  // const [activeUser, setactiveUser] = useState(null);
   return (
     <div >
-      <HoaNavbar/>
+      <HoaNavbar activeUser={activeUser} />
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>

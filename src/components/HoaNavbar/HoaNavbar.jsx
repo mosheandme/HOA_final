@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
-function HoaNavbar(props) {
+function HoaNavbar({ activeUser }) {
     return (
         <div c-navbar>
             <Navbar bg="light" expand="lg">
@@ -10,14 +10,14 @@ function HoaNavbar(props) {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#tenants">Tenants</Nav.Link>
-                            <Nav.Link href="#messages">Messages</Nav.Link>
-                            <Nav.Link href="#issues">Issues</Nav.Link>
-                            <Nav.Link href="#voting">Voting</Nav.Link>
+                            {activeUser ? <Nav.Link href="#tenants">Tenants</Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#messages">Messages</Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#issues">Issues</Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#voting">Voting</Nav.Link> : null}
                         </Nav>
                         <Nav className="ms-auto">
-                            <Nav.Link href="#login">Login</Nav.Link>
-                            <Nav.Link href="#">Logout</Nav.Link>
+                            {!activeUser ? <Nav.Link href="#login">Login</Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#">Logout</Nav.Link> : null}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
