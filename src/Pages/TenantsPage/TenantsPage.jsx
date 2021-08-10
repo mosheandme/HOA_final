@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 function TenantsPage({ activeUser }) {
@@ -8,7 +9,9 @@ function TenantsPage({ activeUser }) {
     }
     return (
         <div className="P-Tenants">
-            TenantsPage
+            <Container>
+                TenantsPage
+            </Container>
         </div>
     );
 }

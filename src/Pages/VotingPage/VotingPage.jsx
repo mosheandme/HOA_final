@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 function VotingPage({ activeUser }) {
@@ -8,7 +9,9 @@ function VotingPage({ activeUser }) {
     }
     return (
         <div className="P-Voting">
-            VotingPage
+            <Container>
+                VotingPage
+            </Container>
         </div>
     );
 }

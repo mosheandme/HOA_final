@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 function MessagesPage({ activeUser }) {
@@ -8,7 +9,9 @@ function MessagesPage({ activeUser }) {
     }
     return (
         <div className="P-Massages">
-            MessagesPage
+            <Container>
+                MessagesPage
+            </Container>
         </div>
     );
 }
