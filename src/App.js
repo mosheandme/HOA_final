@@ -16,16 +16,16 @@ import jsonUsers from './data/Users.json';
 
 function App() {
   const[users,setUsers]=useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
-  const [activeUser, setactiveUser] = useState(new UserModel({ fname: "Moshe", lname: "Batito", email: "moshe@moshe.com", apartment: "2", isCommitteeMember: "true", pwd: "123" }));
+  const [activeUser, setActiveUser] = useState();
   
   return (
     <div >
-      <HoaNavbar activeUser={activeUser} onLogout={() => setactiveUser(null)} />
+      <HoaNavbar activeUser={activeUser} onLogout={() => setActiveUser()} />
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
-          <Route exact path="/login"><LoginPage users={users}/></Route>
-          <Route exact path="/issues"><IssuesPage activeUser={activeUser} /></Route>
+          <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={activeUser => setActiveUser(activeUser)}/></Route>
+          <Route exact path="/issues"><IssuesPage  activeUser={activeUser} /></Route>
           <Route exact path="/messages"><MessagesPage activeUser={activeUser} /></Route>
           <Route exact path="/tenants"><TenantsPage activeUser={activeUser} /></Route>
           <Route exact path="/voting"><VotingPage activeUser={activeUser} /></Route>
