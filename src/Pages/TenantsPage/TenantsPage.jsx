@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
+import "./TenantsPage.css"
 
 function TenantsPage({ activeUser }) {
     if (!activeUser) {
@@ -10,9 +11,12 @@ function TenantsPage({ activeUser }) {
     return (
         <div className="P-Tenants">
             <Container>
-                TenantsPage
+                <div className="heading">
+                    TenantsPage
+                    <Button>Add New Tenant</Button>
+                </div>
             </Container>
-        </div>
+        </div >
     );
 }
 
