@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
-function NewTenantModal({ show, onClose }) {
+function NewTenantModal({ show, onClose, onCreate }) {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ function NewTenantModal({ show, onClose }) {
 
 
     function createTenent(){
-        console.log(fname, lname, email, apartment, pwd);
+        onCreate(fname, lname, email, apartment, pwd)
     }
 
 

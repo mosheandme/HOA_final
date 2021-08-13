@@ -5,8 +5,11 @@ import { Redirect } from 'react-router-dom';
 import NewTenantModal from '../../components/NewTenantModal/NewTenantModal';
 import "./TenantsPage.css"
 
-function TenantsPage({ activeUser }) {
+function TenantsPage({ activeUser, onNewTenant }) {
     const [showTenantModal, setShowTenantModal] = useState(false)
+
+    
+
     if (!activeUser) {
         return <Redirect to="/" />
 
@@ -19,7 +22,7 @@ function TenantsPage({ activeUser }) {
                     <Button onClick={() => setShowTenantModal(true)}  >Add New Tenant</Button>
                 </div>
             </Container>
-            <NewTenantModal show={showTenantModal} onClose={() => setShowTenantModal(false)} />
+            <NewTenantModal show={showTenantModal} onClose={() => setShowTenantModal(false)} onCreate={onNewTenant} />
 
 
         </div >

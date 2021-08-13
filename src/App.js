@@ -20,14 +20,28 @@ function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
   const [messages, setMessages] = useState(jsonMessages.map(plainMessage => new MessageModel(plainMessage)));
   const [activeUser, setActiveUser] = useState();
-  
+
 
   const updateMessages = (newMsg) => {
     let newMessages = [...messages];
     newMessages.push(new MessageModel(newMsg));
     setMessages(newMessages)
   }
+  function createTenant(fname, lname, email, apartment, pwd) {
+    const NewTenant = new UserModel(
+      {
 
+        fname,
+        lname,
+        email,
+        apartment,
+        pwd
+
+      }
+    );
+    setUsers(users.concat(NewTenant));
+
+  }
   return (
     <div >
       <HoaNavbar activeUser={activeUser} onLogout={() => setActiveUser()} />
@@ -37,7 +51,7 @@ function App() {
           <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={activeUser => setActiveUser(activeUser)} /></Route>
           <Route exact path="/issues"><IssuesPage activeUser={activeUser} /></Route>
           <Route exact path="/messages"><MessagesPage messages={messages} activeUser={activeUser} updateMessages={updateMessages} /></Route>
-          <Route exact path="/tenants"><TenantsPage activeUser={activeUser} /></Route>
+          <Route exact path="/tenants"><TenantsPage activeUser={activeUser} onNewTenant={createTenant} /></Route>
           <Route exact path="/voting"><VotingPage activeUser={activeUser} /></Route>
         </Switch>
       </HashRouter>
