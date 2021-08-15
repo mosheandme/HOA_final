@@ -30,13 +30,11 @@ function App() {
   function createTenant(fname, lname, email, apartment, pwd) {
     const NewTenant = new UserModel(
       {
-
         fname,
         lname,
         email,
         apartment,
         pwd
-
       }
     );
     setUsers(users.concat(NewTenant));

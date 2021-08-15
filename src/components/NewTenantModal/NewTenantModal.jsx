@@ -9,12 +9,19 @@ function NewTenantModal({ show, onClose, onCreate }) {
     const [apartment, setApartment] = useState("");
     const [pwd, setPwd] = useState("");
 
-
-    function createTenent(){
-        onCreate(fname, lname, email, apartment, pwd)
+    function clearForm(){
+        setFname(""); 
+        setLname(""); 
+        setEmail(""); 
+        setApartment(""); 
     }
 
 
+    function createTenent(){
+        onCreate(fname, lname, email, apartment, pwd);
+        clearForm();
+        onClose();
+    }
 
     return (
         <Modal show={show} onHide={onClose} >
