@@ -51,7 +51,7 @@ function App() {
           <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={activeUser => setActiveUser(activeUser)} /></Route>
           <Route exact path="/issues"><IssuesPage activeUser={activeUser} /></Route>
           <Route exact path="/messages"><MessagesPage messages={messages} activeUser={activeUser} updateMessages={updateMessages} /></Route>
-          <Route exact path="/tenants"><TenantsPage activeUser={activeUser} onNewTenant={createTenant} /></Route>
+          <Route exact path="/tenants"><TenantsPage users={users} activeUser={activeUser} onNewTenant={createTenant} /></Route>
           <Route exact path="/voting"><VotingPage activeUser={activeUser} /></Route>
         </Switch>
       </HashRouter>

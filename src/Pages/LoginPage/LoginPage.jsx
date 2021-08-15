@@ -10,7 +10,7 @@ function LoginPage({ activeUser, users, onLogin }) {
     const [showInvalidLogin, setshowInvalidLogin] = useState(false);
 
     if (activeUser) {
-        return <Redirect to="/massages" />
+        return <Redirect to="/messages" />
     }
 
     function login() {
